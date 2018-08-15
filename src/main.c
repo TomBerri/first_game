@@ -1,4 +1,3 @@
-
 #include "../include/game.h"
 
 #define BLACK RGBA8(0, 0, 0, 255)
@@ -181,7 +180,6 @@ int main(int argc, char *argv[]) {
 						vita2d_end_drawing();
 						vita2d_swap_buffers();
 						vita2d_fini();
-						vita2d_free_texture(test);
 						vita2d_free_pgf(pgf);
 						sceKernelExitProcess(-1);
 						return -1;
@@ -297,7 +295,6 @@ int main(int argc, char *argv[]) {
 
 	//End program
 	vita2d_fini();
-	vita2d_free_texture(test);
 	vita2d_free_pgf(pgf);
 	sceKernelExitProcess(0);
 	return 0;
