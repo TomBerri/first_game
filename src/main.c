@@ -45,9 +45,6 @@ float timer_inc = 0.0166667;
 //FPS
 float FPS = 0;
 
-//Textures
-vita2d_texture *test;
-
 
 int main(int argc, char *argv[]) {
 	vita2d_pgf *pgf;
@@ -66,15 +63,12 @@ int main(int argc, char *argv[]) {
 
 	srand(time(NULL));
 
-	test = vita2d_load_PNG_file("app0:/assets/test.png");
-
 	while (1) {
 		vita2d_start_drawing();
 		vita2d_clear_screen();
 
 		sceCtrlPeekBufferPositive(0, &pad, 1);
 
-		vita2d_draw_texture(test, 0, 0);
 		vita2d_pgf_draw_text(pgf, 0, 20, BLACK, 1.0f, "Press cross to start!");
 
 		if (pad.buttons & SCE_CTRL_CROSS) {
